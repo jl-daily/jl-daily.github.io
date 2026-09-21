@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Campaign Performance — James Daily</title>
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a href="../index.html" class="logo">JD<span>.</span></a>
+      <div class="nav-links">
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#skills">Skills</a>
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+  <main class="prose">
+    <a class="back-link" href="../index.html#projects">← Back to projects</a>
+    <p class="meta">Campaign Analytics • SQL + Sheets • ~5 min read</p>
+    <h1>Campaign Performance: Spend, CAC & ROAS by Channel</h1>
+    <p><strong>Question:</strong> Which channels drive efficient growth, and where should the next £1,000 go?</p>
+
+    <h2>1. Data</h2>
+    <p><!-- TODO: Replace with your dataset -->
+      Sample dataset: <code>marketing_campaign.csv</code> (Kaggle / HubSpot sample). Columns: date, channel (Paid Search, Paid Social, Email, Organic), spend, impressions, clicks, conversions, revenue.
+      Cleaned in Sheets: removed duplicates, standardised channel names, added week column.
+    </p>
+
+    <h2>2. Analysis</h2>
+    <div class="kpi-grid">
+      <div class="kpi"><strong>£12.4k</strong><span>Total spend</span></div>
+      <div class="kpi"><strong>£38</strong><span>Blended CAC</span></div>
+      <div class="kpi"><strong>3.2x</strong><span>Blended ROAS</span></div>
+      <div class="kpi"><strong>Email: 6.1x</strong><span>Best ROAS</span></div>
+    </div>
+    <p>SQL used for aggregation (example — paste your real query):</p>
+    <pre>SELECT
+  channel,
+  SUM(spend) AS spend,
+  SUM(conversions) AS conv,
+  SUM(revenue) AS revenue,
+  ROUND(SUM(spend)/NULLIF(SUM(conversions),0),2) AS cac,
+  ROUND(SUM(revenue)/NULLIF(SUM(spend),0),2) AS roas
+FROM marketing_campaign
+GROUP BY 1
+ORDER BY roas DESC;</pre>
+
+    <table>
+      <tr><th>Channel</th><th>Spend</th><th>CAC</th><th>ROAS</th><th>Takeaway</th></tr>
+      <tr><td>Paid Search</td><td>£5,200</td><td>£32</td><td>3.8x</td><td>Scale cautiously</td></tr>
+      <tr><td>Paid Social</td><td>£4,800</td><td>£51</td><td>2.1x</td><td>Creative fatigue — refresh</td></tr>
+      <tr><td>Email</td><td>£400</td><td>£9</td><td>6.1x</td><td>Cheapest — expand list/flows</td></tr>
+      <tr><td>Organic</td><td>£2,000*</td><td>£28</td><td>4.0x</td><td>*content cost estimated</td></tr>
+    </table>
+
+    <h2>3. Charts</h2>
+    <div class="embed-box">
+      <strong>TODO: Add 2 charts here.</strong><br />
+      Export from Sheets / Tableau as PNG and put in <code>assets/images/</code>, then <code>&lt;img src="../assets/images/campaign-roas.png"&gt;</code>.
+      Suggested: (1) Bar: ROAS by channel, (2) Line: CAC by week.
+    </div>
+
+    <h2>4. Recommendation</h2>
+    <div class="callout">
+      Shift 20% of Paid Social budget (£960) to Paid Search + Email capture for 4 weeks. Expected: -12% blended CAC, guardrail: Paid Search impression share &gt; 65%.
+    </div>
+    <h2>What I'd do next</h2>
+    <ul>
+      <li>Break down by campaign / audience, not just channel</li>
+      <li>Check attribution window + view-through bias</li>
+      <li>Run creative test on Paid Social (hook in first 3s)</li>
+    </ul>
+    <p class="small">Tools: SQL, Google Sheets, Kaggle dataset. Replace numbers with your run.</p>
+  </main>
+  <script src="../script.js"></script>
+</body>
+</html>

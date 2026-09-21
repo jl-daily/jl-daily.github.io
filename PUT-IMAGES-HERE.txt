@@ -1,0 +1,8 @@
+Put chart PNGs here, e.g.:
+- campaign-roas.png
+- campaign-cac-trend.png
+- ga4-funnel.png
+
+Then reference from HTML as:
+  assets/images/campaign-roas.png (from index.html)
+  ../assets/images/campaign-roas.png (from projects/*.html)

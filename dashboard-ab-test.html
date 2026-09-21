@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard + A/B Test — James Daily</title>
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a href="../index.html" class="logo">JD<span>.</span></a>
+      <div class="nav-links">
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#skills">Skills</a>
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+  <main class="prose">
+    <a class="back-link" href="../index.html#projects">← Back to projects</a>
+    <p class="meta">Dashboard • Tableau Public / Looker Studio • Experimentation</p>
+    <h1>Marketing Dashboard + A/B Test Write-up</h1>
+    <p><strong>Question:</strong> Can a stakeholder see health in 30 seconds, and can we prove what lifts conversion?</p>
+
+    <h2>1. Dashboard (embed)</h2>
+    <div class="embed-box">
+      <strong>TODO: Embed Tableau Public.</strong><br />
+      Tableau Public → Share → Embed code → paste here. Free and perfect for job links.<br />
+      Include: KPI tiles (Spend, Revenue, CAC, ROAS, CVR), trend line, channel bar, table with WoW change.
+    </div>
+    <p>Design rules I used: one audience (marketing manager), one time range control, one definition per metric, red/green only for good/bad.</p>
+
+    <h2>2. A/B Test: Homepage hero CTA</h2>
+    <p><strong>Hypothesis:</strong> Changing CTA from “Learn More” → “Get 10% Off First Order” will increase click-through from 2.1% to 3.0% because offer > information for new visitors.</p>
+    <ul>
+      <li><strong>Primary metric:</strong> hero CTR. <strong>Guardrails:</strong> bounce rate, checkout start.</li>
+      <li><strong>Sample:</strong> 50/50 split, 2 weeks, min ~2,000 sessions per variant (use a sample-size calculator — link it).</li>
+      <li><strong>Result (sample):</strong> B wins 3.2% vs 2.0% (+60% rel, p &lt; 0.05). No harm to bounce.</li>
+      <li><strong>Decision:</strong> Ship B to 100%, then test offer value vs free shipping next.</li>
+    </ul>
+
+    <div class="callout">
+      Takeaway: Always pair a dashboard with a decision. Dashboards describe — tests decide.
+    </div>
+
+    <h2>Files to attach</h2>
+    <ul>
+      <li>Link to live dashboard (Tableau Public / Looker Studio)</li>
+      <li>CSV sample + data dictionary (what each column means)</li>
+      <li>Screenshot for LinkedIn post announcing the project</li>
+    </ul>
+  </main>
+  <script src="../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+Drop your resume PDF in this folder.
+
+Example: James-Daily-Resume.pdf
+
+Then update resume.html:
+  <a href="assets/resume/James-Daily-Resume.pdf">
+
+Keep the filename simple, no spaces — use dashes.
