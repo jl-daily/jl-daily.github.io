@@ -58,15 +58,38 @@
 
     <hr class="blog-divider" />
 
-    <h2>How I'll document it next</h2>
-    <p>Concrete exports I'm pulling to back this up (no fabricated screenshots):</p>
+    <h2>What Search Console shows (last 3 months, real export)</h2>
+    <p>Export: <code>dragncycles.com-Performance-on-Search</code>, Jun 19 – Sep 18, 2026 (92 days). Web search only.</p>
+    <div class="kpi-grid">
+      <div class="kpi"><strong>770</strong><span>Clicks</span></div>
+      <div class="kpi"><strong>7,567</strong><span>Impressions</span></div>
+      <div class="kpi"><strong>10.2%</strong><span>Avg CTR</span></div>
+      <div class="kpi"><strong>85%</strong><span>Clicks from mobile</span></div>
+    </div>
+    <table>
+      <tr><th>Top query</th><th>Clicks</th><th>Impr.</th><th>Pos</th><th>Read</th></tr>
+      <tr><td>dragon cycles frankfort ky</td><td>142</td><td>387</td><td>1.2</td><td>Branded #1 (note spelling: dragon)</td></tr>
+      <tr><td>motorcycle shops near me</td><td>17</td><td>205</td><td>7.5</td><td>Page 1 bottom — push to top 3</td></tr>
+      <tr><td>motorcycle dealers near me</td><td>8</td><td>37</td><td>7.7</td><td>Same opportunity</td></tr>
+    </table>
+    <p>
+      Takeaways: (1) Branded dominates (~3/4 of clicks) — defend it, fix spelling variants
+      (dragon vs drag'n). (2) Non-branded “near me” gets impressions at pos ~7–8 — winning
+      those to pos 1–3 is the growth lever. (3) Mobile = 658 clicks at pos 6.5 vs desktop
+      97 clicks at pos 23.5 — check desktop experience + canonicals. (4) Pages show
+      <code>http://</code> vs <code>https://</code> split (568 vs 142 clicks) — consolidate
+      to one canonical. Inventory price pages rank pos ~3 — keep feeding them.
+    </p>
+
+    <h2>Next: GA for both companies</h2>
+    <p>Now that GSC is in, same pattern for GA4:</p>
     <ul>
-      <li>Meta Insights: reach / engagement for hero bike post vs flyer post</li>
-      <li>GA: sessions 5-month trend, source = social</li>
-      <li>Search Console: average position + clicks for target pages</li>
+      <li>GA4 → Reports → Acquisition: sessions by source/medium (social vs organic), last 90 days — export CSV to <code>assets/projects/dragn-cycles/data/</code></li>
+      <li>Same for Mr. Unclog into <code>assets/projects/mr-unclog-drains/data/</code></li>
+      <li>Then I’ll add a 2-line “social → site” bridge to each case study (no raw PII published — aggregates + charts only, with owner permission)</li>
     </ul>
     <div class="callout">
-      Takeaway for hiring managers: I ship creative fast, then tie it to traffic + ranking. Samples above show execution — measurement section will show proof as exports land.
+      Takeaway for hiring managers: I ship creative fast, then tie it to search + site data. Creative above shows execution — GSC above shows proof starting.
     </div>
 
     <h2>Tools</h2>
