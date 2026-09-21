@@ -1,51 +1,58 @@
-# Marketing Analyst Portfolio — Free Static Starter
+# How I Built My Marketing Analyst Portfolio (for free)
 
-Plain HTML/CSS, no build step. Ready for GitHub Pages or Vercel (both free).
+Live site: **https://jl-daily.github.io/**
+Repo: `jl-daily.github.io` — plain HTML/CSS, no build step, hosted free on GitHub Pages.
 
-## Files
-- `index.html` — home: hero, 3 projects, skills, about, contact
-- `projects/` — 3 case-study pages
-- `assets/resume/` — PUT YOUR RESUME PDF HERE (e.g. `James-Daily-Resume.pdf`)
-- `assets/images/` — chart PNGs / screenshots
-- `resume.html` — web resume (links to PDF in `assets/resume/`)
-- `styles.css`, `script.js`
+I'm James Daily, Durham, NC — NC State MM in Marketing Analytics + BA in Communication.
+I needed a portfolio for entry-level analyst applications, so I built this instead of paying for a site builder.
 
-## Preview locally
-```bash
-# option 1: just open index.html in browser
-# option 2: serve (so embeds/paths behave like prod)
-python3 -m http.server 8000
-# → http://localhost:8000
-```
+## 1. Why not thisiscatalogue.co.uk?
 
-## Deploy free — Option A: GitHub Pages (recommended, you said OK with code)
-1. Create free GitHub account
-2. New repo: `your-username.github.io` (public)
-3. Upload all files in this folder to repo root (drag-drop via web works)
-4. Repo → Settings → Pages → Source: `main` / `/ (root)` → Save
-5. Live in ~1 min at `https://your-username.github.io`
-6. Put that URL in CV header + LinkedIn Featured
+My girlfriend mentioned `thisiscatalogue.co.uk`. Turns out that's just a Leeds design studio site —
+no sign-up, no hosting. So I built my own: free forever, no branding, built to show analyst thinking
+(Problem → Data → Analysis → Recommendation).
 
-`.nojekyll` is included so Pages serves files as-is.
+## 2. Stack (all free)
 
-## Deploy free — Option B: Vercel
-1. Push folder to GitHub (any repo name)
-2. vercel.com → Add New Project → Import repo → Framework: Other → Deploy
-3. Free `*.vercel.app` URL, auto-deploys on git push
+- **Pages:** `index.html` (home) + `projects.html`, `skills.html`, `about.html`, `resume.html`
+- **Case studies:** `projects/dragn-cycles.html`, `projects/mr-unclog-drains.html`, `projects/amt-group.html`
+- **Assets:** `assets/logos/`, `assets/resume/James-Daily-Resume.pdf`, `assets/projects/<client>/` (photos + `data/`)
+- **Hosting:** GitHub Pages from `main` / root, `.nojekyll` so files serve as-is
+- **Preview locally:** `python3 -m http.server 8000` → `http://localhost:8000` (local only — the public URL is the `github.io` one)
 
-## Customise (TODOs in code)
-- [ ] `index.html`: name, email, LinkedIn/GitHub/Tableau URLs, About paragraph
-- [ ] `assets/resume/`: drop your exported PDF there, then check link in `resume.html`
-- [ ] Project 1: run query on Kaggle dataset, replace KPIs/table, add 2 PNGs in `assets/images/`
-- [ ] Project 2: use GA4 demo account (Google Merchandise Store), add screenshots + Looker Studio iframe
-- [ ] Project 3: publish Tableau Public dashboard, paste embed code
+## 3. What each project proves
 
-## Free data sources to finish projects
-- GA4 demo: search "Google Analytics demo account" → Merchandise Store
-- Kaggle: "marketing campaign", "ecommerce", "A/B test" datasets
-- Looker Studio (free) + Tableau Public (free) for dashboards
+- **Drag'n Cycles** (Frankfort, KY): social + SEO. Real GSC export (Jun 19–Sep 18, 92 days):
+  770 clicks, 7,567 impressions, 10.2% CTR, 85% mobile. Branded owns #1; “near me” queries at pos ~7 are the lever.
+  Files: `assets/projects/dragn-cycles/data/gsc-*.csv` (aggregates only — full 958-row queries stay private).
+- **Mr. Unclog Drains** (White Plains, NY): website SEO + email. Work samples live; GSC/GA4 exports next once I have the login.
+- **AMT Group** (Creedmoor, NC): B2B for two subgroups — **CS Medical** (education-led: sessions, awareness, spotlights)
+  and **Mystaire** (offer-led: May Special + “My News” series). Photos + measurement plan on the page.
 
-## Why this beats thisiscatalogue.co.uk for you
-thisiscatalogue.co.uk is a Leeds design studio site — not a platform you can join.
-This starter is yours, free forever, no branding, and built to show analyst thinking:
-Problem → Data → Analysis → Recommendation.
+## 4. Lessons that cost me time (so you don’t pay them)
+
+- **GitHub web upload picks files, not folders.** Navigate INTO the target folder first, then Upload —
+  otherwise everything lands at root and images/links 404. Move via pencil → rename path (e.g. `assets/projects/amt-group/mystaire/x.jpeg`).
+- **Folders don’t exist until a file does.** Create with `projects/.gitkeep`, then upload inside.
+- **Filenames matter:** lowercase, dashes, exact case (`James-Daily-Resume.pdf`, `dragn-cycles-logo.webp`). One double `.pdf.pdf` broke my resume link.
+- **`.webp` is a real image**, not a webpage — browsers display it fine.
+- **Black-background logos** need a dark badge behind them (see `.card-logo` / `.blog-logo` in `styles.css`).
+- **`mailto:` needs a default mail app.** Mine did nothing, so `Get in touch` now opens Gmail compose in a new tab.
+- **Don’t publish raw client data.** Aggregates + charts on the site; full exports stay on my Mac until the owner approves. No PII, no revenue.
+
+## 5. Going forward
+
+- [ ] GA4 acquisition exports for Drag'n + Mr. Unclog → `assets/projects/*/data/ga4-*.csv`
+- [ ] Replace `LinkedIn: Add your URL here` placeholders (Home + Resume)
+- [ ] Add cover thumbnails to Projects index if it ever feels text-heavy
+- [ ] Track ideas in my local to-do app (localhost:3001): projects “Portfolio Site”, “Drag'n Cycles”, “Mr. Unclog”
+
+## 6. Repo map (source of truth = this folder)
+
+- Root: `index.html`, `projects.html`, `skills.html`, `about.html`, `resume.html`, `styles.css`, `script.js`, `.nojekyll`
+- `projects/`: `dragn-cycles.html`, `mr-unclog-drains.html`, `amt-group.html`
+- `assets/logos/`: `dragn-cycles-logo.webp`, `mr-unclog-logo.png`
+- `assets/resume/`: `James-Daily-Resume.pdf`
+- `assets/projects/dragn-cycles/`: photos + `data/` (GSC aggregates + README)
+- `assets/projects/mr-unclog-drains/`: photos + `data/README.txt`
+- `assets/projects/amt-group/cs-medical/`, `mystaire/`, `data/`
