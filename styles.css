@@ -125,3 +125,29 @@ th { background: var(--bg-alt); }
 
 .site-footer { border-top: 1px solid var(--line); text-align: center; color: var(--muted); padding: 1.5rem; font-size: .9rem; }
 .back-link { display: inline-block; margin: 1.5rem 0 0; }
+
+/* Resume top banner — white text on dark */
+.resume-top {
+  background: #0f172a;
+  color: #fff;
+  border-radius: var(--radius);
+  padding: 1.75rem 1.5rem;
+  margin: 1rem 0 0.5rem;
+}
+.resume-top h1 { color: #fff; margin: 0 0 0.4rem; }
+.resume-top .meta { color: #cbd5e1; }
+.resume-top a { color: #fff; }
+.resume-top .btn { color: #fff; }
+
+/* Blog-style case studies */
+.blog-meta { color: var(--muted); font-size: 0.95rem; margin: 0.5rem 0 0; }
+.blog-hero { border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); margin: 1.25rem 0; }
+.blog-hero img { display: block; width: 100%; height: auto; }
+.blog-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin: 1rem 0; }
+@media (max-width: 700px) { .blog-grid { grid-template-columns: 1fr; } }
+figure.blog-figure { margin: 0; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; background: #fff; }
+figure.blog-figure img { display: block; width: 100%; height: auto; }
+figure.blog-figure figcaption { padding: 0.65rem 0.9rem; color: var(--muted); font-size: 0.9rem; border-top: 1px solid var(--line); }
+.blog-divider { border: 0; border-top: 1px solid var(--line); margin: 2rem 0; }
+.card-logo { height: 48px; width: auto; max-width: 180px; object-fit: contain; margin-bottom: 0.6rem; display: block; }
+.blog-logo { height: 56px; width: auto; max-width: 220px; object-fit: contain; margin: 0.8rem 0 0; }
