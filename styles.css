@@ -75,6 +75,7 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 1.25rem 3rem; }
 .btn-ghost { background: #fff; color: var(--text); border-color: var(--line); }
 .btn-ghost:hover { border-color: var(--text); background: #fff; color: var(--text); }
 .btn-small { padding: .4rem .8rem; font-size: .9rem; }
+.nav-links a.btn, .nav-links a.btn:hover, .nav-links a.btn:visited { color: #fff; font-weight: 800; text-decoration: none; }
 
 .section { padding: 2.5rem 0; border-top: 1px solid var(--line); }
 .section-alt { background: var(--bg-alt); margin: 0 -1.25rem; padding-left: 1.25rem; padding-right: 1.25rem; }
