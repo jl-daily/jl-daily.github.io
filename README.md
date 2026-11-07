@@ -43,7 +43,7 @@ no sign-up, no hosting. So I built my own: free forever, no branding, built to s
 ## 5. Going forward
 
 - [ ] GA4 acquisition exports for Drag'n + Mr. Unclog → `assets/projects/*/data/ga4-*.csv`
-- [ ] Replace `LinkedIn: Add your URL here` placeholders (Home + Resume)
+- [x] LinkedIn URL on Home + Resume (opens in a new tab)
 - [ ] Add cover thumbnails to Projects index if it ever feels text-heavy
 - [ ] Track ideas in my local to-do app (localhost:3001): projects “Portfolio Site”, “Drag'n Cycles”, “Mr. Unclog”
 
